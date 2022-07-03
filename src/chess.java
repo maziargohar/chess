@@ -149,6 +149,7 @@ class SecondMenu {
                 case "logout":
                     System.out.println("logout successful");
                     code = 1;
+                    isLoggedOutOrNewGame = true;
                     break;
                 case "help":
                     help();
@@ -186,10 +187,11 @@ class SecondMenu {
         if (!chess.passwords.containsKey(username)) {
             System.out.println("no user exists with this username");
             return false;
-        } else
+        } else{
             chess.BlackPlayer = username;
-        chess.limits = Integer.parseInt(limit);
-        return true;
+            chess.limits = Integer.parseInt(limit);
+            return true;
+        }
 
     }
 
@@ -213,7 +215,8 @@ class SecondMenu {
 }
 
 class ThirdMenu {
-    static void start(Scanner input) {
+    static void start(Scanner input){}
+    /* {
         boolean isLoggedOutOrNewGame = false;
         int code = 2;
         while (!isLoggedOutOrNewGame) {
@@ -273,5 +276,5 @@ class ThirdMenu {
             } else {
             }
         }
-    }
+    }*/
 }
